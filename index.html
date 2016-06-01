@@ -2,22 +2,23 @@
 layout: default
 ---
 
-<div class="home">
+<h2>Getting Started</h2>
 
-  <h1 class="page-heading">Posts</h1>
+<h3>This is the comprehensive style guide intended towards the use of the RED Arena internal web application.<h3>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<p>All necessary elements towards the app's construction can be linked on the left navigation.</p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<h4>General Information</h4>
+	<li>The side navigation of this page links to more specific guides for individual elements.</li><br>
+	<li>The guide is best understood when referenced and read all at once.</li><br>
+	<li>Colors have specific names that are referenced throughout the guide. These names can be referenced in the Colors section of the guide.</li><br>
+	<li>This guide is accompanied by full page mock-ups. They should be referenced along with this guide for maximum clarity.</li><br>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<h4>CSS Construction</h4>
+	<li>SASS is used for the page's construction. Specifically SCSS.</li><br>
+	<li>Nesting should be used when appropriate.</li><br>
+	<li>All appropriate elements are defined as variables when appropriate. They are located in their appropriate .scss files (ex. _colors.scss). These files are then imported into the main SASS folder.</li><br>
+	<li>It is recommended that the site is designed "mobile first."</li><br>
+	 
+	
 
-</div>

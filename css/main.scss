@@ -3,51 +3,543 @@
 ---
 @charset "utf-8";
 
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "colors";
+@import	"fonts";
+@import "grid";	
 
 
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+h2{
+	font-size: 24px;
+}
 
-$spacing-unit:     30px;
+h3{
+	font-weight: 400;
+}
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+h4{
+	font-size: 16px;
+}
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+p{
+	font-weight: 200;
+	font-size: 16px;
 }
 
 
+/***HEADER***/
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+.wrapper{
+	background-color: $PrimaryColor;
+	font-family: $HeaderFont;
+	font-weight: $HeaderFontWeight;
+	font-size: $HeaderFontSize:
+	text-transform: uppercase;
+	padding: 1em 0.5em 1em 0.5em;
+	font-weight: 800;
+	font-size: 24px;
+
+	a{
+		color: $ContentColor;
+		text-decoration: none;
+	}
+
+	@media (min-width: 650px){
+		font-size: 32px;
+	}
+}
+
+/***BODY ROW AND COLUMN***/
+
+.whole-page-wrapper{
+	overflow: hidden;
+	background-color: $ContentColor;
+}
+
+/***CONTENT***/
+
+.page-content{
+	
+
+	@media (min-width: 650px){
+		height: 44em;
+		overflow-y: auto;
+	}
+}
+
+.content-wrapper{
+	background-color: $ContentColor;
+	font-family: $NavFont;
+	color: $FontColor;
+	padding: 1em;
+
+	@media  (min-width: 650px){
+		float: left;
+		
+	}
+}
+
+/***SIDE NAV BAR***/
+
+.trigger-wrapper{
+	background-color: $SecondaryColor;
+	font-family: $NavFont;
+	padding: 0.5em 4em 2em 3em;
+	font-size: 14px;
+	text-align: left;
+
+	a{
+		color: $ContentColor;
+		text-decoration: none;
+	}
+
+	@media (min-width: 650px){
+		float: left;
+		height: 49em;
+		padding: 2em 4em 1em 3em;
+	}
+
+	@media (min-width: 900px){
+		height: 43em;
+		font-size: 16px;
+	}
+
+}
+
+.trigger{
+	line-height: 3;
+}
+
+
+.page-link{
+	display: block;
+	border-bottom: 1px solid white;
+}
+
+
+/***PAGE LAYOUT***/
+
+.table-pic{
+	width: 23em;
+
+	@media (min-width: 650px){
+		width: 27em;
+	}
+
+	@media (min-width: 900px){
+		width: 100%;
+	}
+}
+
+/***JQUERY STYLING***/
+
+.jquery-wrap1{
+	overflow: hidden;
+	border-bottom: 1px solid $FontColor;
+	padding-top: 0.2em;
+}
+
+.jquery-wrap2{
+	overflow: hidden;
+	background-color: $SecondaryColor;
+	padding-top: 0.2em;
+}
+
+%toggle{
+	font-family: $NavFont;
+	color: $FontColor;
+	font-size: 16px;
+	font-weight: 700;
+	padding-bottom: 0.2em;
+	padding-left: 0.5em;
+	float: left;
+}
+
+.toggle1{
+  @extend %toggle;
+}
+
+.toggle4{
+	font-family: $NavFont;
+	color: $ContentColor;
+	background-color: $SecondaryColor;
+	font-size: 16px;
+	font-weight: 400;
+	float: left;
+	padding: 0.7em 1em 0.2em 1em;
+	margin-bottom: 0.7em;
+}
+
+%arrow{
+	border-radius: 50%;
+	width: 1.35em;
+	height: 1.4em;
+	margin-right: 1em;
+	padding-left: 0.1em;
+	text-align: center;
+	border: 2px solid $PrimaryColor;
+	cursor: pointer;
+	float: right;
+}
+
+.arrow1{
+	@extend %arrow;
+	margin-bottom: 0.5em;
+}
+
+.arrow2{
+	@extend %arrow;
+	color: $ContentColor;
+	margin-top: 0.5em;
+}
+
+.arrow3{
+	@extend %arrow;
+	margin-bottom: 0.5em;
+}
+
+.arrow4{
+	@extend %arrow;
+	margin-bottom: 0.5em;
+}
+
+.arrow5{
+	@extend %arrow;
+	margin-bottom: 0.5em;
+}
+
+.rotated {
+    -webkit-transform: rotate(90deg);  /* Chrome, Safari 3.1+ */
+    -moz-transform: rotate(90deg);  /* Firefox 3.5-15 */
+    -ms-transform: rotate(90deg);  /* IE 9 */
+    -o-transform: rotate(90deg);  /* Opera 10.50-12.00 */
+    transform: rotate(90deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.grid-css{
+  display: none;
+}
+
+.grid-html{
+  display: none;
+}
+
+.collapse-example1{
+	display: none;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+.collapse-example2{
+	background-color: $CardColor;
+	display: none;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+.modal-example{
+	display: none;
+}
+
+/***BUTTONS***/
+
+.button-wrap{
+	overflow: hidden;
+	width: 20em;
+	margin-left: 1.5em;
+
+	@media (min-width: 650px){
+		margin-left: 0em;
+		width: 22em;
+	}
+
+	@media (min-width: 900px){
+		width: 27em;
+		margin-left: 4em;
+	}
+}
+
+%button{
+	padding: 1em 2em 1em 2em;
+	width: 5em;
+	text-align: center;
+	border-radius: 6px;
+
+	@media (min-width: 650px){
+		width: 6em;
+	}
+
+	@media (min-width: 900px){
+		width: 7em;
+	}
+}
+
+.primary-button{
+	@extend %button;
+	color: $ContentColor;
+	background-color: $PrimaryButtonColor;
+	border: 2px solid transparent;
+	float: left;
+}
+
+.primary-button:hover{
+	background-color:$PrimaryHoverColor;
+}
+
+.primary-button-hover{
+	@extend %button;
+	color: $ContentColor;
+	background-color: $PrimaryHoverColor;
+	border: 2px solid transparent;
+	float: right;
+}
+
+.secondary-button{
+	@extend %button;
+	color: $ContentColor;
+	background-color: $SecondaryColor;
+	border: 2px solid $PrimaryColor;
+	float: left;
+}
+
+.secondary-button:hover{
+	background-color: $PrimaryColor;
+}
+
+.secondary-button-hover{
+	@extend %button;
+	color: $ContentColor;
+	background-color: $SecondaryHoverColor;
+	border: 2px solid transparent;
+	float: right;
+}
+
+.alt-secondary-button{
+	@extend %button;
+	color: $SecondaryButtonTextColor;
+	background-color: $ContentColor;
+	border: 2px solid $PrimaryColor;
+	float: left;
+}
+
+.alt-secondary-button:hover{
+	background-color: $PrimaryColor;
+	color: $ContentColor;
+}
+
+.alt-secondary-button2{
+	@extend %button;
+	color: $SecondaryButtonTextColor;
+	background-color: $ContentColor;
+	border: 2px solid $PrimaryColor;
+	float: right;
+}
+
+.alt-secondary-button2:hover{
+	background-color: $PrimaryColor;
+	color: $ContentColor;
+}
+
+/***LINKS***/
+
+.a-link-example-wrap{
+	background-color: $ContentColor;
+	text-align: center;
+	width: 15em;
+	margin-left: 3.5em;
+
+	@media (min-width: 650px){
+		margin-left: 5em;
+	}
+
+	@media (min-width: 900px){
+		margin-left: 9.5em;
+	}
+}
+
+.a-link{
+	color: $PrimaryColor;
+}
+
+.a-link-example{
+	color: $PrimaryColor;
+}
+
+.header-example{
+	background-color: $PrimaryColor;
+	text-align: center;
+	width: 15em;
+	padding: 1em 0 1em 0;
+	margin-left: 3.5em;
+
+	@media (min-width: 650px){
+		margin-left: 5em;
+	}
+
+	@media (min-width: 900px){
+		margin-left: 9.5em;
+	}
+}
+
+.a-header{
+	color: $ContentColor;
+	text-decoration: none;
+}
+
+.a-header-border{
+	color: $ContentColor;
+	text-decoration: none;
+	border: 2px solid $ContentColor;
+	padding: 0.5em;
+}
+
+/***COLOR DISPLAY***/
+
+.color-wrap{
+	overflow: hidden;
+	width: 100%;
+}
+
+.color-description{
+	width: 22em;
+	float: left;
+	margin-top: 1em;
+	font-weight: 200;
+
+	@media (min-width: 650px){
+		width: 16em;
+		float: right;
+		margin-right: 0em;
+		margin-top: 0;
+	}
+
+	@media (min-width: 900px){
+		width: 25em;
+		float: left;
+		margin-left: 1em;
+	}
+}
+
+.color-display-wrap{
+	float: left;
+}
+
+%color-display{
+	border-radius: 50%;
+	border: 2px solid black;
+	width: 7em;
+	height: 7em;
+	margin-left: 7em;
+
+	@media (min-width: 650px){
+		width: 4em;
+		height: 4em;
+		margin-left: 1em;
+		margin-top: 2em;
+	}
+
+	@media (min-width: 900px){
+		margin-top: 0em;
+		margin-left: 0em;
+		width: 7em;
+		height: 7em;
+	}
+}
+
+.color-display-red{
+	@extend %color-display;
+	background-color: $PrimaryColor;
+}
+
+.color-display-grey{
+	@extend %color-display;
+	background-color: $SecondaryColor;
+}
+
+.color-display-content{
+	@extend %color-display;
+	background-color: $ContentColor;
+}
+
+.color-display-primary-button{
+	@extend %color-display;
+	background-color: $PrimaryButtonColor;
+}
+
+.color-display-primary-button-hover{
+	@extend %color-display;
+	background-color: $PrimaryHoverColor;
+}
+
+.color-display-font{
+	@extend %color-display;
+	background-color: $FontColor;
+}
+
+.color-display-card{
+	@extend %color-display;
+	background-color: $CardColor;
+}
+
+.color-display-card-alt{
+	@extend %color-display;
+	background-color: $CardAltColor;
+}
+
+.color-display-passive{
+	@extend %color-display;
+	background-color: $PassiveColor;
+}
+
+
+.color-type{
+	color: $FontColor;
+	margin-left: 8.5em;
+
+	@media (min-width: 650px){
+		font-size: 14px;
+		margin-left: 1.2em;
+	}
+
+	@media (min-width: 900px){
+		font-size: 16px;
+		margin-left: 1.4em;
+	}
+}
+
+/***FORM ELEMENTS***/
+
+.input-form{
+	border: 2px solid $FontColor;
+	width: 17.25em;
+	text-align: center;
+	padding: 0.5em;
+}
+
+.error-form{
+	border: 2px solid $PrimaryColor;
+	color: $PrimaryColor;
+	font-weight: 800;
+	width: 17.25em;
+	text-align: center;
+	padding: 0.5em;
+}
+ footer{
+ 	height: 2em;
+ 	background-color: $PrimaryColor;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

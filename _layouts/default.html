@@ -3,18 +3,39 @@
 
   {% include head.html %}
 
+
   <body>
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+     <div class="row"> 
+      <div class="col col-12 whole-page-wrapper">
+          <div class="row"> 
+            <div class="col col-2 trigger-wrapper"> 
+              <div class="trigger">
+                {% for my_page in site.pages %}
+                  {% if my_page.title %}
+                  <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              </nav>
+            </div>
+          
+ 
+            <div class="col col-8 page-content">
+              <div class="col col-8 content-wrapper">
+                {{ content }}
+              </div>
+            </div>
+          </div>  
       </div>
-    </div>
 
-    {% include footer.html %}
+     </div> 
+        {% include footer.html %}
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <script src="/JQuery/main.js" type="text/javascript"></script>
 
-  </body>
+      </body>
 
 </html>
